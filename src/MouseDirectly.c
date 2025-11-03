@@ -1,5 +1,12 @@
-#include <Windows.h>
+#if defined __linux__
+#error "Linux not supported!"
+#elif defined _WINE
+#include <windows.h>
 #include <stdio.h>
+#elif defined _WIN32
+#include <windows.h>
+#include <stdio.h>
+#endif
 
 int main() {
     // Variable, um den vorherigen Zustand der linken Maustaste zu speichern
